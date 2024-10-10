@@ -1,16 +1,19 @@
-import { getChildren } from "./database.js"
+import { database } from "./database.js"
 
-const kids = getChildren()
-const celebrities = getCelebrities()
+const kids = database.children
+const celebrities = database.celebrities
 
 const findCelebrityMatch = (kidObject, celebrityArray) => {
     let celebrity = null
 
-    for (const celebrity of celebrtyArray) {
-
+    for (const star of celebrityArray) {
+        if (star.id === kidObject.celebrityId) {
+            celebrity = star
+            break
+        }
     }
 
-    return celebritiy
+    return celebrity
 }
 
 export const Pairings = () => {
@@ -18,10 +21,10 @@ export const Pairings = () => {
     html = "<ul>"
 
     for (const kid of kids) {
-        const kidsStar = findCelebrityMatch(kid, celebrities)
+        const celebrity = findCelebrityMatch(kid, celebrities)
         html += `
             <li>
-                ${kid.name} will be making memories with ${kidsStar.name}, a ${kidsStar.Sport} star, by ${kid.wish}
+                ${kid.name} will be making memories with ${celebrity.name}, a ${celebrity.sport} star, by ${kid.wish}
             </li>
         `
     }
@@ -30,4 +33,3 @@ export const Pairings = () => {
 
     return html
 }
-

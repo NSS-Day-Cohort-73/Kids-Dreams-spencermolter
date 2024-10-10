@@ -1,15 +1,15 @@
-import { getCelebrities } from "./database.js"
+import { database } from "./database.js"
 
-const celebrities = getCelebrities()
+const celebrities = database.celebrities
 
 export const Celebrities = () => {
     let html = "<ol>"
 
-    for (const star of celebrities) {
+    for (const celebrity of celebrities) {
         html += `<li 
                     data-id="${celebrity.id}" 
                     data-type="celebrity"
-                    data-sport="${celebrty.sport}"
+                    data-sport="${celebrity.sport}"
                     id="star--${celebrity.id}">
                     ${celebrity.name}
                 </li>`

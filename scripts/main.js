@@ -19,8 +19,28 @@ const applicationHTML = `
 
     <article class="assignments">
         <h2>Pairings</h2>
+        ${Pairings()}
+
     </article>
 `
 
 mainContainer.innerHTML = applicationHTML
 
+const kiddos = document.querySelectorAll("[data-type='child']")
+const celebs = document.querySelectorAll("[data-type='celebrity']")
+
+kiddos.forEach(kid => {
+    kid.addEventListener('click', (event) => {
+        const kidName = event.target.textContent
+        const kidWish = event.target.getAttribute("data-wish")
+        alert(`${kidName}'s wish is ${kidWish}`)
+    })
+})
+
+celebs.forEach(celeb => {
+    celeb.addEventListener('click', (event) => {
+        const celebName = event.target.textContent
+        const celebSport = event.target.getAttribute("data-sport")
+        alert(`${celebName} is a ${celebSport} star`)
+    })
+})
