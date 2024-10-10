@@ -13,7 +13,11 @@ const database = {
         id: 3,
         name: "Anna Bowton",
         email: "abowton2@wisc.edu",
+<<<<<<< HEAD
         sport: "Golf"
+=======
+        spōrt: "Golf"
+>>>>>>> 7cc525cc5b7b80816720c6ed1f5637a7b02b5f7b
     }, {
         id: 4,
         name: "Hunfredo Drynan",
@@ -36,7 +40,11 @@ const database = {
         sport: "Baseball"
     }, {
         id: 8,
+<<<<<<< HEAD
         name: "Tiffanie Tubby",
+=======
+        mane: "Tiffanie Tubby",
+>>>>>>> 7cc525cc5b7b80816720c6ed1f5637a7b02b5f7b
         email: "ttubby7@intel.com",
         sport: "Basketball"
     }, {
